@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:resize/resize.dart';
+import '../models/all_featured_lawyers_model.dart';
+
+class AllFeaturedLawyersController extends GetxController {
+  GetAllFeaturedLawyersModel getAllFeaturedLawyersModel =
+      GetAllFeaturedLawyersModel();
+
+  bool featuredLawyersLoader = false;
+  updatefeaturedLawyersLoader(bool newValue) {
+    featuredLawyersLoader = newValue;
+    update();
+  }
+
+  // LawyerModel selectedLawyerForView = LawyerModel();
+  // updateSelectedLawyerForView(
+  //   LawyerModel newValue,
+  // ) {
+  //   selectedLawyerForView = newValue;
+  //   update();
+  // }
+
+  int? selectedLawyerCategoryIndex = 0;
+  updateSelectedLawyerCategoryIndex(int? newValue) {
+    selectedLawyerCategoryIndex = newValue;
+    update();
+  }
+
+  ///----app-bar-settings-----start
+  ScrollController? scrollController;
+  bool lastStatus = true;
+  double height = 100.h;
+
+  bool get isShrink {
+    return scrollController!.hasClients &&
+        scrollController!.offset > (height - kToolbarHeight);
+  }
+
+  void scrollListener() {
+    if (isShrink != lastStatus) {
+      lastStatus = isShrink;
+      update();
+    }
+  }
+}

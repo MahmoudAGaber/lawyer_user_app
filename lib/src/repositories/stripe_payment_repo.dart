@@ -16,7 +16,7 @@ stripePaymentRepo(
     BuildContext context, bool responseCheck, Map<String, dynamic> response) {
   if (responseCheck) {
     showDialog(
-      context: Get.context!,
+      context: Get.context!,  
       barrierDismissible: false,
       builder: (_) => AlertDialog(
         content: Column(

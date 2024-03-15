@@ -1,21 +1,40 @@
 {
   "project_info": {
-    "project_number": "919770299150",
-    "project_id": "law-advisor-customer",
-    "storage_bucket": "law-advisor-customer.appspot.com"
+    "project_number": "242943889892",
+    "project_id": "lawyers-7d828",
+    "storage_bucket": "lawyers-7d828.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:919770299150:android:b4839a6f6727e10ca7f55f",
+        "mobilesdk_app_id": "1:242943889892:android:82b57410e492cded0577f1",
         "android_client_info": {
-          "package_name": "com.lawadvisor.customer"
+          "package_name": "com.mks.Lawyercustomer"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyADDYzy5_YNb3I3m0BJeKT-BN8SZM8kAWM"
+          "current_key": "AIzaSyAoFezj_jdC_bEuyzwUdtGX4Bv1asAAE8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242943889892:android:13d9aaa96bef0a3f0577f1",
+        "android_client_info": {
+          "package_name": "com.mks.lawyer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFezj_jdC_bEuyzwUdtGX4Bv1asAAE8A"
         }
       ],
       "services": {

@@ -55,7 +55,7 @@ class _HomeCategoriesListWidgetState extends State<HomeCategoriesListWidget> {
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
-                      itemCount: 5,
+                      itemCount: lawyerMainCategoriesController.getLawyerMainCategoriesModel.data!.length,
                       padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
                       itemBuilder: (context, position) {
                         return InkWell(

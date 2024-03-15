@@ -136,12 +136,13 @@
   "broadcast": "Broadcast",
   "about": "About",
   "createAccountAsCustomer": "Create Account as Customer",
-  "Reviews": "Reviews",
-  "Reviews": "Reviews",
-  "Reviews": "Reviews",
-  "Reviews": "Reviews",
-  "Reviews": "Reviews",
-  "Reviews": "Reviews"
+  "addToWallet": "Add to Wallet",
+  "walletTopup": "Wallet Topup",
+  "pleaseChoosePaymentMethod": "Please Choose Payment Method",
+  "makeTopup": "Make Topup",
+  "language": "Language"
+
+
 
 
 }

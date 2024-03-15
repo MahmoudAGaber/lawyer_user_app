@@ -12,6 +12,7 @@ import 'package:lawyer_consultant/src/localization/app_constants.dart';
 import 'package:lawyer_consultant/src/localization/app_localization.dart';
 import 'package:lawyer_consultant/src/repositories/all_settings_repo.dart';
 import 'package:lawyer_consultant/src/screens/agora_call/agora_logic.dart';
+import 'package:lawyer_consultant/src/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:resize/resize.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -132,6 +133,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           }),
           theme: ThemeData(),
           initialRoute: PageRoutes.splashScreen,
+          home: SplashScreen(),
           getPages: appRoutes(),
           locale: Provider.of<LocalizationProvider>(context).locale,
           localizationsDelegates:  [

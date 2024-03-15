@@ -4,9 +4,9 @@ import '../controllers/all_settings_controller.dart';
 class AppConfigs {
   AppConfigs._();
 
-  static String baseUrl = "https://lawadvisor-demo.hexathemes.com/";
-  static String apiBaseUrl = "https://lawadvisor-demo.hexathemes.com/api/v1/";
-  static String mediaUrl = "https://lawadvisor-demo.hexathemes.com";
+  static String baseUrl = "https://lawyer.fsrhilmak.com/";
+  static String apiBaseUrl = "http://lawyer.fsrhilmak.com/api/v1/";
+  static String mediaUrl = "http://lawyer.fsrhilmak.com";
 
   static dynamic agoraAppId = Get.find<GetAllSettingsController>()
           .getAllSettingsModel

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawyer_consultant/src/localization/language_constraints.dart';
 import 'package:resize/resize.dart';
 
 import '../api_services/post_service.dart';
@@ -40,8 +41,8 @@ class _WalletTopUpScreenState extends State<WalletTopUpScreen> {
             leadingOnTap: () {
               Get.back();
             },
-            richTextSpan: const TextSpan(
-              text: 'Wallet Topup',
+            richTextSpan:  TextSpan(
+              text: getTranslated('walletTopup', context),
               style: AppTextStyles.appbarTextStyle2,
               children: <TextSpan>[],
             ),
@@ -52,8 +53,8 @@ class _WalletTopUpScreenState extends State<WalletTopUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Choose your Payment Method",
+               Text(
+                getTranslated("chooseYourPaymentMethod", context),
                 style: AppTextStyles.headingTextStyle4,
               ),
               SizedBox(height: 20.h),
@@ -77,8 +78,9 @@ class _WalletTopUpScreenState extends State<WalletTopUpScreen> {
                       itemBuilder: (context, index) {
                         return DropdownButtonHideUnderline(
                           child: DropdownButtonFormField(
-                            hint: const Text(
-                              'Please Choose Payment Method',
+                            hint:  Text(
+                              getTranslated('pleaseChoosePaymentMethod', context),
+
                               style: AppTextStyles.bodyTextStyle11,
                             ), // Not necessary for Option 1
                             value: selectedPaymentGateway,
@@ -132,7 +134,7 @@ class _WalletTopUpScreenState extends State<WalletTopUpScreen> {
               ),
               SizedBox(height: 20.h),
               TextFormFieldWidget(
-                hintText: 'Amount',
+                hintText: getTranslated('amount', context),
                 controller: Get.find<MakePaymentController>().amountController,
                 onChanged: (String? value) {
                   Get.find<MakePaymentController>().amountController.text ==
@@ -163,7 +165,7 @@ class _WalletTopUpScreenState extends State<WalletTopUpScreen> {
                         true,
                         makeWalletTopupRepo);
                   },
-                  buttonText: "Make Topup",
+                  buttonText: getTranslated("makeTopup", context),
                   buttonTextStyle: AppTextStyles.bodyTextStyle8,
                   borderRadius: 10,
                   buttonColor: AppColors.primaryColor),

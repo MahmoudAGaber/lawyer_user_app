@@ -91,8 +91,8 @@ class WalletScreenState extends State<WalletScreen> {
                         child: Column(
                           children: [
                             const SizedBox(height: 18),
-                            const Text(
-                              "Available Amount",
+                             Text(
+                              getTranslated("availableAmount",context),
                               style: AppTextStyles.bodyTextStyle5,
                             ),
                             const SizedBox(height: 12),
@@ -108,7 +108,7 @@ class WalletScreenState extends State<WalletScreen> {
                               child: ButtonWidgetOne(
                                 borderRadius: 10,
                                 buttonColor: AppColors.offWhite,
-                                buttonText: 'Add to Wallet',
+                                buttonText: getTranslated('addToWallet',context),
                                 buttonTextStyle: AppTextStyles.buttonTextStyle7,
                                 onTap: () {
                                   Get.toNamed(PageRoutes.walletTopUpScreen);
@@ -122,8 +122,8 @@ class WalletScreenState extends State<WalletScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "Transactions History",
+                           Text(
+                            getTranslated("transactionsHistory",context),
                             style: AppTextStyles.headingTextStyle4,
                           ),
                           ElevatedButton(
@@ -147,8 +147,8 @@ class WalletScreenState extends State<WalletScreen> {
                                 }
                               });
                             },
-                            child: const Text(
-                              "Transactions",
+                            child:  Text(
+                              getTranslated("transactions",context),
                               style: AppTextStyles.buttonTextStyle2,
                             ),
                           ),

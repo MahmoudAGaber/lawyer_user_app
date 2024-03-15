@@ -13,7 +13,7 @@ class LocalizationProvider extends ChangeNotifier {
   final SharedPreferences? sharedPreferences;
 
   LocalizationProvider({required this.sharedPreferences}) {
-    _loadCurrentLanguage();
+    loadCurrentLanguage();
   }
 
   int? _languageIndex;
@@ -24,7 +24,7 @@ class LocalizationProvider extends ChangeNotifier {
   bool get isLtr => _isLtr;
   int? get languageIndex => _languageIndex;
 
-  void _loadCurrentLanguage() async {
+  void loadCurrentLanguage() async {
     _locale = Locale(sharedPreferences!.getString(AppConstants.languageCode) ?? AppConstants.languages[1].languageCode!,
         sharedPreferences!.getString(AppConstants.countryCode) ?? AppConstants.languages[1].countryCode);
     _isLtr = _locale.languageCode != 'ar';

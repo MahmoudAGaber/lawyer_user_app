@@ -134,8 +134,8 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                                                   Image.asset(
                                                       "assets/icons/Upload_duotone_line.png"),
                                                   const SizedBox(height: 4),
-                                                  const Text(
-                                                    "Upload image",
+                                                   Text(
+                                                    getTranslated('uploadImage',context),
                                                     style: AppTextStyles
                                                         .bodyTextStyle1,
                                                   )
@@ -162,8 +162,8 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                                                       Image.asset(
                                                           "assets/icons/Upload_duotone_line.png"),
                                                       const SizedBox(height: 4),
-                                                      const Text(
-                                                        "Upload image",
+                                                       Text(
+                                                        getTranslated('uploadImage',context),
                                                         style: AppTextStyles
                                                             .bodyTextStyle1,
                                                       )
@@ -222,7 +222,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 18),
                           TextFormFieldWidget(
-                            hintText: '* First Name',
+                            hintText: getTranslated('firstName',context),
                             controller: editUserProfileController
                                 .userProfileFirstNameController,
                             // initialText: editUserProfileLogic
@@ -243,7 +243,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 14),
                           TextFormFieldWidget(
-                            hintText: '* Last Name',
+                            hintText: getTranslated('lastName',context),
                             controller: editUserProfileController
                                 .userProfileLastNameController,
                             onChanged: (String? value) {
@@ -262,7 +262,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 14),
                           TextFormFieldWidget(
-                            hintText: '* User Name',
+                            hintText: getTranslated('userName',context),
                             controller: editUserProfileController
                                 .userProfileUserNameController,
                             onChanged: (String? value) {
@@ -281,7 +281,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 14),
                           TextFormFieldWidget(
-                            hintText: '* Description',
+                            hintText: getTranslated('description',context),
                             controller: editUserProfileController
                                 .userProfileDescriptionController,
                             // initialText: editUserProfileController
@@ -307,7 +307,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 14),
                           TextFormFieldWidget(
-                            hintText: '* Address Line 1',
+                            hintText: getTranslated('addressLine1',context),
                             controller: editUserProfileController
                                 .userProfileAddressLine1Controller,
                             onChanged: (String? value) {
@@ -326,7 +326,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                           ),
                           const SizedBox(height: 14),
                           TextFormFieldWidget(
-                            hintText: '* Zip Code',
+                            hintText: getTranslated('zipCode',context),
                             controller: editUserProfileController
                                 .userProfileZipCodeController,
                             onChanged: (String? value) {
@@ -466,11 +466,11 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                                         barrierDismissible: false,
                                         builder: (BuildContext context) {
                                           return CustomDialogBox(
-                                            title: 'Sorry',
+                                            title: getTranslated('sorry',context),
                                             titleColor: AppColors
                                                 .customDialogErrorColor,
-                                            descriptions: 'Inside Screen Popup',
-                                            text: 'Ok',
+                                            descriptions: getTranslated('insideScreenPopup',context),
+                                            text: getTranslated('ok',context),
                                             functionCall: () {
                                               Navigator.pop(context);
                                             },
@@ -528,7 +528,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                                 //       editUserProfileDataRepo);
                                 // }
                               },
-                              buttonText: "Save Profile",
+                              buttonText: getTranslated('saveProfile',context),
                               buttonTextStyle: AppTextStyles.bodyTextStyle8,
                               borderRadius: 10,
                               buttonColor: AppColors.primaryColor),
@@ -574,7 +574,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                     });
                   },
                   child: Text(
-                    'camera',
+                    getTranslated('camera',context),
                     style: AppTextStyles.buttonTextStyle8,
                   )),
               CupertinoDialogAction(
@@ -602,7 +602,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
                     });
                   },
                   child: Text(
-                    'gallery',
+                    getTranslated('gallery',context),
                     style: AppTextStyles.buttonTextStyle8,
                   )),
             ],

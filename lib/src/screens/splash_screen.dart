@@ -6,12 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawyer_consultant/src/config/app_colors.dart';
 import 'package:lawyer_consultant/src/config/app_font.dart';
+import 'package:provider/provider.dart';
 
 import '../controllers/all_events_controller.dart';
 import '../controllers/all_featured_lawyers_controller.dart';
 import '../controllers/all_law_firms_controller.dart';
 import '../controllers/all_lawyers_controller.dart';
 import '../controllers/all_top_rated_lawyers_controller.dart';
+import '../localization/LocalizationProvider.dart';
 import '../models/logged_in_user_model.dart';
 import '../api_services/get_service.dart';
 import '../api_services/post_service.dart';
@@ -61,11 +63,15 @@ class SplashScreenState extends State<SplashScreen>
       Get.toNamed(PageRoutes.introScreen);
     }
   }
+   LocalizationProvider? localizationProvider;
 
   @override
   void initState() {
     super.initState();
-
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      localizationProvider = Provider.of<LocalizationProvider>(context,listen: false);
+      localizationProvider!.loadCurrentLanguage();
+    });
     if (Get.find<GeneralController>().storageBox.hasData('userData') &&
         Get.find<GeneralController>().storageBox.hasData('authToken')) {
       Get.find<GeneralController>().currentUserModel = User.fromJson(jsonDecode(

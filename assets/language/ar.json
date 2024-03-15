@@ -135,5 +135,10 @@
   "podcast": "تدوين صوتي",
   "broadcast": "إذاعة",
   "about": "عن",
-  "createAccountAsCustomer": "انشاء حساب كمستخدم"
+  "createAccountAsCustomer": "انشاء حساب كمستخدم",
+  "addToWallet": "أضف الي المحفظة",
+  "walletTopup": "اشحن رصيد المحفظة",
+  "pleaseChoosePaymentMethod": "الرجاء اختيار طريقة الدفع",
+  "makeTopup": "قم بتعبئة الرصيد",
+  "language": "اللغة"
 }

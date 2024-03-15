@@ -4,12 +4,15 @@ import 'dart:developer';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawyer_consultant/main.dart';
 import 'package:lawyer_consultant/src/config/app_colors.dart';
 import 'package:lawyer_consultant/src/config/app_text_styles.dart';
 import 'package:lawyer_consultant/src/controllers/sign_out_user_controller.dart';
 import 'package:lawyer_consultant/src/controllers/signin_controller.dart';
 import 'package:lawyer_consultant/src/repositories/sign_out_user_repo.dart';
+import 'package:lawyer_consultant/src/screens/splash_screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:provider/provider.dart';
 import 'package:resize/resize.dart';
 
 import '../api_services/get_service.dart';
@@ -19,12 +22,14 @@ import '../controllers/all_settings_controller.dart';
 import '../controllers/general_controller.dart';
 import '../controllers/search_controller.dart';
 import '../controllers/logged_in_user_controller.dart';
+import '../localization/LocalizationProvider.dart';
 import '../localization/language_constraints.dart';
 import '../models/logged_in_user_model.dart';
 import '../repositories/all_lawyers_repo.dart';
 import '../routes.dart';
 import '../screens/category_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/intro_screen.dart';
 import '../screens/lawyers_screen.dart';
 import 'appbar_widget.dart';
 
@@ -42,6 +47,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   final signInLogic = Get.put(SigninController());
   final signOutUserLogic = Get.put(SignOutUserController());
   // int Get.find<GeneralController>().bottomNavIndex = 1;
+  String _selectedLanguage = 'ar';
+
 
   @override
   void initState() {
@@ -429,12 +436,59 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                           AssetImage("assets/icons/Chield_alt.png"),
                           color: AppColors.secondaryColor,
                         ),
+
                         title: Text(
                           getTranslated('privacyPolicy',context),
                           style: AppTextStyles.subHeadingTextStyle1,
                         ),
                         onTap: () {
                           Get.toNamed(PageRoutes.privacyPolicyScreen);
+                        },
+                      ),
+                      Consumer<LocalizationProvider>(
+                        builder: (context, provider ,child) {
+                          return ListTile(
+                            isThreeLine: false,
+                            dense: true,
+                            visualDensity:
+                            const VisualDensity(vertical: -1, horizontal: -3),
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 0),
+                            leading: const Icon(Icons.language),
+                            title: Text(
+                              getTranslated('language',context),
+                              style: AppTextStyles.subHeadingTextStyle1,
+                            ),
+                            onTap: () {
+                              Get.toNamed(PageRoutes.privacyPolicyScreen);
+                            },
+                            trailing: DropdownButton<String>(
+                              elevation: 0,
+                              underline: SizedBox(),
+                              value: _selectedLanguage,
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  _selectedLanguage = newValue!;
+                                   provider.setLanguage(Locale(newValue));
+
+                                });
+                               Navigator.push(context, MaterialPageRoute(builder: (context)=> SplashScreen()));
+
+
+                                // Add logic to change the app language here
+                              },
+                              items: [
+                                DropdownMenuItem<String>(
+                                  value: 'en',
+                                  child: Text('English'),
+                                ),
+                                DropdownMenuItem<String>(
+                                  value: 'ar',
+                                  child: Text('العربية'),
+                                ),
+                              ],
+                            ),
+                          );
                         },
                       ),
                       // ListTile(

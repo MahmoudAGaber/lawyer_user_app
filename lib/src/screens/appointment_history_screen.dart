@@ -84,11 +84,11 @@ class _AppointmentHistoryScreenState extends State<AppointmentHistoryScreen> {
                       indicator: BoxDecoration(
                           gradient: AppColors.gradientOne,
                           borderRadius: BorderRadius.circular(10)),
-                      tabs: const [
-                        Tab(text: 'All'),
-                        Tab(text: 'Pending'),
-                        Tab(text: 'Accepted'),
-                        Tab(text: 'Completed'),
+                      tabs:  [
+                        Tab(text:getTranslated( 'all',context) ),
+                        Tab(text:getTranslated( 'pending',context) ),
+                        Tab(text:getTranslated( 'accepted',context) ),
+                        Tab(text:getTranslated( 'completed',context) ),
                       ],
                     ),
                   ),
